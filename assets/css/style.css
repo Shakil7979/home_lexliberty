@@ -341,16 +341,24 @@ body{
 
  
 
-#myTabContent .tab-pane {
+.tabs_flex {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 85%; 
+	height: 100%; 
 }
 
 
 #myTabContent {
 	height: 100%;
+}
+
+#myTabContent .tab-pane{
+	height: 100%;
+}
+
+.donate_tabs_content {
+	height: 83%;
 }
 
 
