@@ -339,6 +339,21 @@ body{
 	height: 100%;
 }
 
+ 
+
+#myTabContent .tab-pane {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 85%; 
+}
+
+
+#myTabContent {
+	height: 100%;
+}
+
+
 
 /* Header Area CSS  */
 
