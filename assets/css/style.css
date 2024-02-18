@@ -142,7 +142,7 @@ header .link-help {
 .link-help span {
 	width: 45px;
 	height: 45px;
-	border: 2px solid #F13D3E;
+	border: 2px solid #AFCFF1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -151,11 +151,11 @@ header .link-help {
 }
 
 .icon_circle i { 
-	color: #F13D3E;
+	color: #AFCFF1;
 }
 
 .menu a:hover {
-	color: #F13D3E;
+	color: #AFCFF1;
 }
 
 .container-video__content {
@@ -261,7 +261,7 @@ header .link-help {
 	width: 45px;
 	height: 45px;
 	min-width: 45px;
-	border: 2px solid #F13D3E;
+	border: 2px solid #AFCFF1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -285,7 +285,7 @@ header .link-help {
 	transition: opacity .2s;
 	position: relative;
 	padding: 5px 10px 5px 46px;
-	border: 1px solid #F13D3E;
+	border: 1px solid #AFCFF1;
 	border-radius: 30px;
 }
 
@@ -320,7 +320,7 @@ header .link-help {
 	left: 0;
 	height: 33px;
 	content: "";
-	background: #F13D3E;
+	background: #AFCFF1;
 	top: 0;
 	border-radius: 50%;
 }
@@ -343,7 +343,7 @@ header .link-help {
 }
 
 .container-video__content .container-video__video .box-video2 .play:hover {
-	background: #F13D3E;
+	background: #AFCFF1;
 }
 
 
@@ -416,7 +416,7 @@ header .link-help {
 }
 
  .row-video .col-video .p:hover {
-	color: #F13D3E;
+	color: #AFCFF1;
 }
 
 .row-video .col-video .p:hover .show-text {
@@ -442,7 +442,7 @@ header .link-help {
 	transition: .2s;
 	position: relative;
 	padding: 5px 10px 5px 46px;
-	border: 1px solid #F13D3E;
+	border: 1px solid #AFCFF1;
 	border-radius: 30px;
 }
 
@@ -460,7 +460,7 @@ header .link-help {
 	left: 0;
 	height: 33px;
 	content: "";
-	background: #F13D3E;
+	background: #AFCFF1;
 	top: 0;
 	border-radius: 50%;
 }
@@ -475,7 +475,7 @@ header .link-help {
 }
 
 .row-video .col-video a.play:hover {
-	background: #F13D3E;
+	background: #AFCFF1;
 }
 
 .social-box {
@@ -499,7 +499,7 @@ header .link-help {
 	width: 45px;
 	height: 45px;
 	min-width: 45px;
-	border: 2px solid #F13D3E;
+	border: 2px solid #AFCFF1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -515,7 +515,7 @@ header .link-help {
 	width: 39px;
 	height: 39px;
 	min-width: 39px;
-	border: 2px solid #F13D3E;
+	border: 2px solid #AFCFF1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -577,6 +577,10 @@ body{
 	position: relative;
 }
 
+.chemp_single img {
+	width: 100%;
+}
+
 .donate_fixed_btn {
 	position: fixed;
 	left: -47px;
@@ -586,6 +590,7 @@ body{
 	padding: 10px 25px;
 	transition: 0.3s;
 	border-radius: 0 0 8px 8px;
+	z-index: 999;
 }
 
 .donate_fixed_btn a {  
@@ -866,15 +871,17 @@ body{
 }
 
 .menu ul li a {
-	line-height: 42px;
+	line-height: 14px;
 	padding: 0 10px;
-	font-size: 14px;
+	font-size: 17px;
 	color: #000;
 	display: inline-block;
 	font-weight: 400;
 	transition: 0.3s;
 }
-
+.donet_mobile{
+	display: none;
+}
 .menu ul li a.active ,
 .menu ul li a:hover { 
 	color: #A2CFFE !important;
@@ -1371,9 +1378,11 @@ input:focus-visible {
 .footer {
 	text-align: center;
 }
-
+.footer a img {
+	width: 180px;
+}
 .footer_area {
-	background: #333333;
+	background: #000000;
 	padding: 130px 0 30px 0;
 }
 
@@ -1411,6 +1420,31 @@ input:focus-visible {
 .footer ul li a:hover{
 	opacity: 0.83;
 }
+
+
+/*======================  Newslatter CSS  ======================*/
+
+.newslatter_form {
+	width: 60%;
+}
+
+.newslatter_form .form_group input { 
+	border: 1px solid #ddd; 
+}
+
+.newsLatter_text p {
+	font-size: 14px;
+	margin-bottom: 8px;
+	color: #2d2b2b;
+}
+
+.newsLatter_text ul {
+	list-style: disc;
+}
+
+
+
+
 
 
 /*======================  Goals CSS  ======================*/

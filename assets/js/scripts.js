@@ -45,6 +45,10 @@ $(document).ready(function(){
 
 		return false;
 	});
+	$(document).on('click','.mobile_bars',function(){   
+		$('.menu').slideToggle(); 
+		return false;
+	});
 
 
 	$(document).on('click','.show_give_data ul li a',function(){
@@ -57,8 +61,10 @@ $(document).ready(function(){
 		$('.donate_popup').hide(); 
 	});	
 
-	$(document).on('click','.donate_btn a, .donate_fixed_btn a',function(){ 
+	$(document).on('click','.donate_btn a, .donate_fixed_btn a , .donate_modal_btn',function(){ 
 		$('.donate_popup').show(); 
+
+		return false;
 	});	
 
 	$('.counter').counterUp({
