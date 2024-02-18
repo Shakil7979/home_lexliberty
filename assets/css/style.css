@@ -1422,6 +1422,10 @@ input:focus-visible {
 }
 
 
+.mobile_bars {
+	display: none;
+}
+
 /*======================  Newslatter CSS  ======================*/
 
 .newslatter_form {

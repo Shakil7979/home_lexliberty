@@ -57,6 +57,9 @@
         flex-direction: column;
         margin-top: 50px;
     }
+    .mobile_bars {
+        display: block;
+    }
     .row-video .col-video {
         max-width: 100%;
         margin-bottom: 15px;
