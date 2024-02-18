@@ -52,6 +52,11 @@
     }
 }
 
+@media all and (min-width: 767px){
+    .menu {
+        display: block !important;
+    }
+}
 @media all and (max-width: 767px){
 	.row-video {
         flex-direction: column;
