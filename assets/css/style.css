@@ -536,7 +536,190 @@ body{
 	padding: 20px 0;
 }
 
-/*======================  Defoult CSS  ======================*/
+.section_title h2 {
+	line-height: 1.8em;
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+
+.section_padding {
+	padding: 60px 0;
+}
+
+.section_title {
+	margin-bottom: 40px;
+}
+
+.chemp_single {
+	position: relative;
+	flex: 0 0 50%;
+	text-align: center;
+}
+
+.btn_2 {
+	font-size: 14px;
+	border: 1px solid #0e48b7;
+	color: #fff;
+	padding: 10px 25px;
+	border-radius: 25px;
+	transition: 0.3s;
+	background: #0e48b7;
+	display: inline-block;
+}
+
+.btn_2:hover {
+	/* background: transparent; */
+	color: #fff;
+}
+
+.chemp_single a {
+	position: absolute;
+	bottom: 55px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 150px;
+}
+
+
+.champ_flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.champ_btnn {
+	text-align: center;
+	margin-top: 57px;
+}
+
+.vission_left {
+	background: #A2CFFE;
+	flex: 0 0 49%;
+}
+
+.vission_left.vission_right {
+	background: #333333;
+}
+
+.vission_box {
+	display: flex;
+	gap: 12px;
+}
+
+.vission_left {
+	background: #A2CFFE;
+	flex: 0 0 calc(100% / 2 - 12px);
+	padding: 61px 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column; 
+	justify-content: center;
+}
+ 
+.vission_left h3 {
+	letter-spacing: 0.01em;
+	font-size: 40px; 
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.vission_right h3{ 
+	color: #fff !important;
+}
+
+.vission_left p {
+	width: 53%;
+	margin: 0 auto;
+	letter-spacing: 0.01em;
+	font-size: 16px;
+}
+
+.vission_right p { 
+	color: #fff;
+}
+
+/*======================  Goals CSS  ======================*/
+.goals_area .section_title h2 { 
+	font-size: 42px;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+
+.section_title_shape svg {
+	width: 50px;
+	height: 50px;
+}
+
+.section_title_shape {
+	text-align: center;
+	position: relative;
+	width: 230px;
+	margin: 0 auto;
+}
+
+.section_title_shape::after {
+	content: '';
+	position: absolute;
+	width: 77px;
+	height: 3px;
+	background: #A2CFFE;
+	left: 0;
+	top: 23px;
+}
+
+.section_title_shape::before {
+	content: '';
+	position: absolute;
+	width: 77px;
+	height: 3px;
+	background: #A2CFFE;
+	right: 0;
+	top: 23px;
+}
+
+.goals_area {
+	background: #F8F4EC;
+}
+
+.single_goal_info h4 {
+	letter-spacing: 0.01em;
+	font-size: 24px;
+}
+
+.single_goal_info p {
+	font-size: 14px;
+	color: #555;
+	margin-bottom: 10px;
+}
+
+.single_goal_info {
+	background: #fff;
+	width: 100%;
+	padding: 30px 18px;
+	text-align: center;
+}
+
+.single_goal img {
+	width: 100%;
+}
+
+.single_goal_info h4 {
+	margin-bottom: 25px;
+}
+
+.single_goal_info a {
+	color: #A2CFFE;
+	text-decoration: underline;
+}
+
+.single_goal{
+	margin-bottom: 15px;
+}
+
+
+/*======================  Goals CSS  ======================*/
 
 
 
