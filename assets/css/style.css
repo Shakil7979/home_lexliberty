@@ -444,7 +444,7 @@ body{
 	margin-top: 35px;
 }
 
-.mission p {
+.mission > p {
 	font-family: "Montserrat", sans-serif;
 	font-size: 16px;
 	color: #282828;
@@ -486,6 +486,58 @@ body{
 	color: #fff;
 	background-color: #0e48b7;
 }
+
+.counter {
+	animation-duration: 1s;
+	animation-delay: 0s;
+  }
+
+  .impact_flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.single_impact_box {
+	flex: 0 0 32%;
+	text-align: center;
+}
+
+.single_impact_box h3 {
+	font-size: 45px;
+	font-weight: 700;
+}
+
+.single_impact_box p {
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	color: #282828;
+	line-height: 27px;
+	text-align: center;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+
+/*======================  Youtube CSS  ======================*/
+
+
+.youtube_video_area {
+	background: #F0F0F0;
+	padding-top: 5px;
+}
+
+.youtube_vdeo iframe {
+	width: 100%;
+	height: 552px;
+}
+
+.youtube_btn{
+	text-align: center;
+	padding: 20px 0;
+}
+
+/*======================  Defoult CSS  ======================*/
+
 
 
 /*
