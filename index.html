@@ -597,10 +597,10 @@
                           <h4> <i class="fa-solid fa-lock"></i> Secure donation</h4>
                           <ul class="nav nav-tabs" id="myTab" role="tablist">
                               <li class="nav-item" role="presentation">
-                              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Give once</button>
+                              <button class="nav-link active" id="home-tab" data-paymenttype="payment" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Give once</button>
                               </li>
                               <li class="nav-item" role="presentation">
-                              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"> <i class="fas fa-heart"></i> Monthly</button>
+                              <button class="nav-link" id="profile-tab" data-paymenttype="subscription" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"> <i class="fas fa-heart"></i> Monthly</button>
                               </li> 
                           </ul>
                           <div class="tab-content" id="myTabContent">
@@ -609,17 +609,17 @@
                                   <div class="tabs_main_flex"> 
                                     <div class="show_give_data">
                                         <ul>
-                                            <li><a href="#">$7,000</a></li>
-                                            <li><a href="#">$3,500</a></li>
-                                            <li><a href="#">$1,500</a></li>
-                                            <li><a href="#">$1,000</a></li>
-                                            <li><a href="#">$650</a></li>
-                                            <li><a href="#">$600</a></li>
+                                            <li><a href="#">$20</a></li>
+                                            <li><a href="#">$40</a></li>
+                                            <li><a href="#">$80</a></li>
+                                            <li><a href="#">$200</a></li>
+                                            <li><a href="#">$450</a></li>
+                                            <li><a href="#">$750</a></li>
                                         </ul>
                                     </div>
                                     <div class="donate_input">
                                       <p>$</p>
-                                      <input type="text" name="" id="">
+                                      <input type="text" value="300" class="donate_amount_value" name="" id="">
                                       <select name="" id="">
                                           <option value="USD">USD</option>
                                           <option value="BDT">BDT</option>
@@ -627,7 +627,7 @@
                                       </select>
                                     </div>  
                                   </div> 
-                                  <div class="donate_btn">
+                                  <div class="donate_btn donate_btn_popup">
                                     <button>Donate</button>
                                 </div>
                                 </div> 
@@ -638,17 +638,17 @@
                                   <div class="tabs_main_flex"> 
                                     <div class="show_give_data">
                                           <ul>
-                                              <li><a href="#">$7,000</a></li>
-                                              <li><a href="#">$3,500</a></li>
-                                              <li><a href="#">$1,500</a></li>
-                                              <li><a href="#">$1,000</a></li>
-                                              <li><a href="#">$650</a></li>
-                                              <li><a href="#">$600</a></li>
+                                              <li><a href="#">$7</a></li>
+                                              <li><a href="#">$10</a></li>
+                                              <li><a href="#">$25</a></li>
+                                              <li><a href="#">$50</a></li>
+                                              <li><a href="#">$100</a></li>
+                                              <li><a href="#">$200</a></li>
                                           </ul>
                                       </div>
                                       <div class="donate_input">
-                                        <p>$</p>
-                                        <input type="text" name="" id="">
+                                        <p>$</p> 
+                                        <input type="text" name="" value="25" class="donate_amount_value" />
                                         <select name="" id="">
                                             <option value="USD">USD</option>
                                             <option value="BDT">BDT</option>
@@ -656,7 +656,7 @@
                                         </select>
                                     </div>
                                   </div>
-                                  <div class="donate_btn">
+                                  <div class="donate_btn donate_btn_popup2">
                                     <button>Donate monthly</button>
                                 </div>
                                 </div>
@@ -673,7 +673,10 @@
       <a href="#" class="donate_times"><i class="fas fa-times"></i></a>
       </div>
 
-
+    <!-- animation -->
+		<div id="loadingOverlay" class="loading-overlay">
+			<div class="spinner"></div>
+		</div>
     <!-- ~~~~~~~~~~ JS Files ~~~~~~~~~~-->
     <!-- jQuery -->
     <script src="assets/js/jquery.min.js"></script>
@@ -685,9 +688,157 @@
     <!-- Bootstrap -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Stripe -->
+		<script
+      src="https://js.stripe.com/v3/"
+      integrity="sha256"
+      crossorigin="anonymous"
+      sandbox="allow-same-origin"
+    ></script>
+   
     <!-- Modernizr -->
     <script src="assets/js/modernizr-3.11.2.min.js"></script>
     <!-- Custom JS (Handed)-->
     <script src="assets/js/scripts.js"></script>
+    
+		<script>
+			const stripe = Stripe(
+				'pk_live_51OkGt0Lfyvatm7w4jM7owCelG2b4B2gnyhSRuKtN4ENfHpGjhDiSDBaiXw5NqiNbhKoMDRE4ntOv5qSFMqedFUAk00x55nJEcM'
+			);
+			const checkoutButton = document.querySelector('.donate_btn_popup');
+			const checkoutButton2 = document.querySelector('.donate_btn_popup2');
+			const donationAmountInput = document.querySelector('.donate_amount_value');
+
+			const loadingOverlay = document.getElementById('loadingOverlay');
+
+
+      //one time payment
+			checkoutButton.addEventListener('click', function () {
+
+        loadingOverlay.style.display = 'block';
+
+          var amountWithCurrency = donationAmountInput.value;
+
+          var numericAmount = parseFloat(amountWithCurrency.replace(/[^\d.-]/g, ''));
+
+          if (isNaN(numericAmount) || numericAmount <= 0) {
+            alert('Please enter a valid donation amount.');
+            return;
+          } 
+
+        const paymentType = 'payment';
+				donateFun(numericAmount,paymentType);
+
+			});
+
+			checkoutButton2.addEventListener('click', function () {
+
+				loadingOverlay.style.display = 'block';
+
+          var amountWithCurrency = donationAmountInput.value;
+
+          var numericAmount = parseFloat(amountWithCurrency.replace(/[^\d.-]/g, ''));
+
+          if (isNaN(numericAmount) || numericAmount <= 0) {
+            alert('Please enter a valid donation amount.');
+            return;
+          } 
+
+        const paymentType = 'subscription';
+				donateFun(numericAmount,paymentType);
+
+			});
+
+
+      const donateFun = (numericAmount,paymentType) => {
+          
+          //quantity
+          let quantity = 1; 
+          const defaultPayment	=	"price_1OlOziLfyvatm7w4NdNgBJGY";
+          const defaultSubs = "price_1OlP74Lfyvatm7w4i9iDbvUj";
+
+          const onetimePaymentObject = {
+            20: 'price_1OlP73Lfyvatm7w4BNJH8MOs',
+            40: 'price_1OlP73Lfyvatm7w4sy7at9et',
+            80: 'price_1OlP73Lfyvatm7w4UckKPqzH',
+            200: 'price_1OlP73Lfyvatm7w4j9rJSoFH',
+            450: 'price_1OlP73Lfyvatm7w4LFAZdr2R',
+            750: 'price_1OlP28Lfyvatm7w4rfNPPvrJ',
+          };
+          const subsPaymentObject = {
+            7: 'price_1OlP74Lfyvatm7w4cUtyrwjj',
+            10: 'price_1OlP74Lfyvatm7w4i9iDbvUj',
+            25: 'price_1OlP73Lfyvatm7w453PN7W9B',
+            50: 'price_1OlP73Lfyvatm7w4LlXmIbHc',
+            100: 'price_1OlP73Lfyvatm7w47pzWmmWS',
+            200: 'price_1OlP73Lfyvatm7w4xQZcnaW7',
+          };
+
+          /*
+          * check if this is monthly subs or one time payment
+          */
+
+          // Check if the active tab is for Monthly
+          if (paymentType === 'payment') {
+
+              // Check if numericAmount is present in onetimePaymentObject keys
+              if (onetimePaymentObject.hasOwnProperty(numericAmount)) {
+                // Use the corresponding price from onetimePaymentObject
+                var lineItems = [
+                  {
+                    price: onetimePaymentObject[numericAmount],
+                    quantity: quantity,
+                  },
+                ];
+              } else {
+                // Use the default payment and numericAmount as quantity
+                var lineItems = [
+                  {
+                    price: defaultPayment,
+                    quantity: numericAmount,
+                  },
+                ];
+              }
+
+          } else {
+              paymentType = 'subscription';
+              // Check if numericAmount is present in subsPaymentObject keys
+              if (subsPaymentObject.hasOwnProperty(numericAmount)) {
+                // Use the corresponding price from subsPaymentObject
+                var lineItems = [
+                  {
+                    price: subsPaymentObject[numericAmount],
+                    quantity: quantity,
+                  },
+                ];
+              } else {
+                // Use the default subscription and numericAmount as quantity
+                var lineItems = [
+                  {
+                    price: defaultSubs,
+                    quantity: numericAmount,
+                  },
+                ];
+              }
+          } 
+          stripe.redirectToCheckout({
+            lineItems: lineItems,
+            mode: paymentType,
+            successUrl: 'https://lexliberty.com/thanks',
+            cancelUrl: 'https://lexliberty.com/cancel',
+          })
+          .then(function (result) {
+            if (result.error) {
+              alert(result.error.message);
+              loadingOverlay.style.display = 'none';
+            }
+          })
+          .catch(function (error) {
+            console.error('Error:', error);
+            loadingOverlay.style.display = 'none';
+          });
+      }
+		</script> 
   </body>
 </html>
