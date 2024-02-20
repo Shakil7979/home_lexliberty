@@ -73,8 +73,34 @@ $(document).ready(function(){
 	  });
 	  $('.counter').addClass('animated fadeInDownBig');
 	  $('h3').addClass('animated fadeIn');
+
+	    
+
+	
+	
 	
 
 
 
 });
+
+
+$('a[href^="#"]').on('click', function(event) {
+	var target = $(this.getAttribute('href'));
+	if (target.length) {
+		event.preventDefault();
+		$('html, body').animate({
+			scrollTop: target.offset().top
+		}, 1000);
+	}
+});
+
+var urlHash = window.location.hash;
+if (urlHash) {
+	var target = $(urlHash);
+	if (target.length) {
+		$('html, body').animate({
+			scrollTop: target.offset().top
+		}, 1000);
+	}
+}
