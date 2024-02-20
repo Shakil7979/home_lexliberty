@@ -1390,7 +1390,7 @@ input:focus-visible {
 }
 
 .donate_logo img {
-	width: 100px;
+	width: 57px;
 }
 
 .footer p {
@@ -1682,4 +1682,8 @@ font-family: "Montserrat", sans-serif;
 
 .about_second_img img {
 	width: 332px;
+}
+
+.donate_left > img {
+	width: 100%;
 }
