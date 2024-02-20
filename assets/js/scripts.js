@@ -59,6 +59,8 @@ $(document).ready(function(){
 
 	$(document).on('click','.donate_times',function(){ 
 		$('.donate_popup').hide(); 
+
+		return false;
 	});	
 
 	$(document).on('click','.donate_btn a, .donate_fixed_btn a , .donate_modal_btn',function(){ 

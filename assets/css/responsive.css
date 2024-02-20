@@ -62,6 +62,15 @@
         flex-direction: column;
         margin-top: 50px;
     }
+    .blog_banner_textt h3 {
+        font-size: 32px; 
+    }
+    .blog_banner_textt ul { 
+        margin-top: 12px;
+    }
+    .blog_banner_area { 
+        padding: 100px 0;
+    }
     .mobile_bars {
         display: block;
     }
@@ -272,6 +281,9 @@
     }
     .donate_btn {
         margin-top: 25px;
+    }
+    .donation_tabss .nav-tabs .nav-link {
+        height: 50px;
     }
 }
 
