@@ -214,6 +214,12 @@
     .footer p { 
         width: 98%; 
     }
+    .about_second_img { 
+        display: none;
+    }
+    .donation_img_1 > img {
+        width: 100%;
+    }
 }
 
 @media all and (max-width: 575px){
