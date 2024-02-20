@@ -1542,10 +1542,11 @@ font-family: "Montserrat", sans-serif;
 	padding: 20px 18px;
 }
 
-.blog_page_info h4 { 
+.blog_page_info > a { 
 	font-size: 21px;
 	font-weight: 800;
-	line-height: 30px;
+	line-height: 30px; 
+	color: #000;
 	margin: 17px 0;
 }
 
@@ -1584,6 +1585,5 @@ font-family: "Montserrat", sans-serif;
 
 .single_page_blog{
 	height: 100%;
-	margin-bottom: 20px;
 	margin-bottom: 20px;
 }
