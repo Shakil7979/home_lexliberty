@@ -63,7 +63,8 @@ $(document).ready(function(){
 		return false;
 	});	
 
-	$(document).on('click','.donate_btn a, .donate_fixed_btn a , .donate_modal_btn',function(){ 
+
+	$(document).on('click','.donate_btn a, .donate_fixed_btn a , .donate_modal_btn, .donet_btn_mission',function(){ 
 		$('.donate_popup').show(); 
 
 		return false;
@@ -75,19 +76,13 @@ $(document).ready(function(){
 	  });
 	  $('.counter').addClass('animated fadeInDownBig');
 	  $('h3').addClass('animated fadeIn');
-
-	    
-
-	
-	
-	
-
+ 
 
 
 });
 
 
-$('a[href^="#"]').on('click', function(event) {
+$('.menu ul li a[href^="#"]').on('click', function(event) {
 	var target = $(this.getAttribute('href'));
 	if (target.length) {
 		event.preventDefault();
@@ -106,3 +101,8 @@ if (urlHash) {
 		}, 1000);
 	}
 }
+
+$(document).on('click','.panel a',function(){  
+
+	return false;
+});	

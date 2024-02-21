@@ -62,6 +62,12 @@
         flex-direction: column;
         margin-top: 50px;
     }
+    .thanks_header h3 { 
+        font-size: 24px; 
+    }
+    .don_info_header h3 {
+        font-size: 24px; 
+    }
     .blog_banner_textt h3 {
         font-size: 32px; 
     }
