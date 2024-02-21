@@ -1058,11 +1058,15 @@ body{
 
 .chemp_single a {
 	position: absolute;
-	bottom: 55px;
+	bottom: 87px;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 	width: 150px;
+}
+
+.don_info p a {
+	color: #465F79;
 }
 
 
